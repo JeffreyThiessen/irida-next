@@ -27,6 +27,7 @@ class IntegrationSapporo < ActiveJobTestCase
     assert_equal 'completed', @workflow_execution.reload.state
 
     perform_enqueued_jobs_sequentially
+
     assert_equal 'completed', @workflow_execution.reload.state
     assert @workflow_execution.cleaned?
   end
