@@ -46,6 +46,11 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
+      - name: Install Sapporo dependencies
+        uses: actions/setup-java@v4
+        with:
+          distribution: adopt
+          java-version: 16
       - name: Download Sapporo
         uses: actions/checkout@v3
         with:
